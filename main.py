@@ -1,3 +1,4 @@
+import os 
 import smtplib
 import requests 
 from bs4 import BeautifulSoup
@@ -13,8 +14,8 @@ HEADERS = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'
 }
 
-GMAIL_ADDRESS = 'pythontest.msmickersgill@gmail.com'
-PASSWORD = 'M0nty22!'
+GMAIL_ADDRESS = os.environ['GMAIL_ADDRESS']
+PASSWORD = os.environ['GMAIL_PASSWORD']
 
 def get_price(): 
     response = requests.get(product_url, headers=HEADERS)
